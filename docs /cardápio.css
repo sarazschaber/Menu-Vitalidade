@@ -1,3 +1,7 @@
+git branch -m main <BRANCH>
+git fetch origin
+git branch -u origin/<BRANCH> <BRANCH>
+git remote set-head origin -a
 /* Tema saúde para landing page de cardápio */
 :root {
   --bg-page: #eaf7f0;
