@@ -2,7 +2,9 @@
 
 Um projeto frontend simples que apresenta um cardápio nutricional com foco em opções saudáveis e proteicas. Ideal para mostrar um menu de refeições organizado por tipo e dia da semana. 
 
-<h2>Link do website</h2>
+<h2>Link do website</h2> 
+
+https://sarazschaber.github.io/Menu-Vitalidade/
 
 <h2>Visão geral</h2>
 
