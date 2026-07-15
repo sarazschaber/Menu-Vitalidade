@@ -1,0 +1,1503 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cardápio</title>
+        <link rel="stylesheet" href="cardápio.css"> 
+    </head>
+    <body>
+        <div class="page">
+            <div class="container">
+                <header class="header">
+                    <h1>Menu Vitalidade</h1>
+                    <h2>Quer melhorar a sua alimentação? Aqui trazemos opções proteicas e nutritivas para você!</h2>
+                    <p>De forma acessível e eficiente, com uma coletânea de planos alimentares recomendados por profissionais da nutrição, te ajudamos a alcançar seus objetivos!</p>
+                </header>
+
+                <nav class="menu-buttons">
+                    <button class="menu-btn active" data-menu="breakfast">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-120q-33 0-56.5-23.5T160-200v-342q-37-22-58.5-58.5T80-680q0-66 47-113t113-47h480q66 0 113 47t47 113q0 43-21.5 79.5T800-542v342q0 33-23.5 56.5T720-120H240Zm0-80h480v-388l40-24q18-11 29-29t11-39q0-33-23.5-56.5T720-760H240q-33 0-56.5 23.5T160-680q0 22 10.5 40.5T200-610l40 22v388Zm212-92q12 11 28.5 11t27.5-11l120-120q12-12 12-28.5T628-468L508-588q-11-12-27.5-12T452-588L332-468q-11 11-11 27.5t11 28.5l120 120Zm28-84-64-64 64-64 64 64-64 64Zm0-104Z"/> 
+                        </svg>
+                        <span>Café da Manhã</span>
+                    </button>
+                    <button class="menu-btn" data-menu="lunch">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M234-160h172q14 0 25-8t14-22l13-50H182l13 50q3 14 14 22t25 8Zm-74-280H80v-120h80v120Zm215-89-85-85 56-56 85 85-56 56ZM120-640H80v-80h40q50 0 85-35t35-85v-40h80v40q0 83-58.5 141.5T120-640Zm400-160H400v-80h120v80ZM40-80v-80h80q-1-3-1.5-5.5T117-171L80-320h480l-37 149q-1 3-1.5 5.5T520-160h246l27-320H567l7 80h-81l-13-160h400l-33 400h73v80H40Zm40-800Zm600 720Zm-360 0Z"/>
+                        </svg>
+                        <span>Almoço</span>
+                    </button>
+                    <button class="menu-btn" data-menu="snack">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-240q-117 0-198.5-81.5T160-520v-240q0-33 23.5-56.5T240-840h500q58 0 99 41t41 99q0 58-41 99t-99 41h-20v40q0 117-81.5 198.5T440-240ZM240-640h400v-120H240v120Zm200 320q83 0 141.5-58.5T640-520v-40H240v40q0 83 58.5 141.5T440-320Zm280-320h20q25 0 42.5-17.5T800-700q0-25-17.5-42.5T740-760h-20v120ZM160-120v-80h640v80H160Zm280-440Z"/> 
+                        </svg>
+                        <span>Lanche</span>
+                    </button>
+                    <button class="menu-btn" data-menu="dinner">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M322-400q-100 0-171-70T80-640q0-100 71-170t172-70h16q-22 25-34 56t-12 64q0 75 52.5 127.5T473-580q23 0 45-5.5t42-16.5q-14 88-81 145t-157 57Zm-1-80q24 0 47.5-6.5T412-507q-87-21-142-90.5T213-756q-26 23-39.5 53T160-640q0 66 47 113t114 47Zm399-40h80v-120h-80v120Zm40 160q17 0 28.5-11.5T800-400v-40h-80v40q0 17 11.5 28.5T760-360ZM234-160h172q14 0 25-8t14-22l13-50H182l13 50q3 14 14 22t25 8Zm86 0ZM40-80v-80h80q-1-3-1.5-5.5T117-171L80-320h480l-37 149q-1 3-1.5 5.5T520-160h200v-127q-36-13-58-44t-22-69v-320h240v320q0 38-22 69t-58 44v127h120v80H40Zm246-538Zm474 178Z"/>
+                        </svg> 
+                        <span>Jantar</span>
+                    </button>
+                    <div class="menu-btn filter-btn">
+                        <span>Dia</span>
+                        <select id="dayFilter" class="day-filter-select" aria-label="Filtrar por dia">
+                            <option value="all">Todos os dias</option>
+                            <option value="segunda-feira">Segunda-feira</option>
+                            <option value="terca-feira">Terça-feira</option>
+                            <option value="quarta-feira">Quarta-feira</option>
+                            <option value="quinta-feira">Quinta-feira</option>
+                            <option value="sexta-feira">Sexta-feira</option>
+                            <option value="sabado">Sábado</option>
+                            <option value="domingo">Domingo</option>
+                        </select>
+                    </div>
+                </nav>
+
+                <main class="content">
+                    <section id="breakfast" class="menu-content active">
+                        <h2>Segunda-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Tigela de aveia cozida com 40 g de aveia, 200 ml de leite desnatado, 1/2 banana, 1 colher de chia e canela.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Porção</th>
+                                    <th>Calorias</th>
+                                    <th>Proteínas</th>
+                                    <th>Carboidratos</th>
+                                    <th>Gorduras</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aveia</td><td>40 g</td><td>150 kcal</td><td>5 g</td><td>27 g</td><td>3 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                                <tr><td>Banana</td><td>1/2 unidade</td><td>55 kcal</td><td>0.6 g</td><td>14 g</td><td>0.2 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Torrada integral com 2 claras mexidas, tomate-cereja, rúcula e 1 kiwi.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Torrada integral</td><td>2 fatias</td><td>80 kcal</td><td>4 g</td><td>16 g</td><td>1 g</td></tr>
+                                <tr><td>Claras</td><td>2 unidades</td><td>34 kcal</td><td>7 g</td><td>0.5 g</td><td>0 g</td></tr>
+                                <tr><td>Tomate-cereja</td><td>1 xícara</td><td>25 kcal</td><td>1 g</td><td>5 g</td><td>0.2 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>42 kcal</td><td>1 g</td><td>10 g</td><td>0.4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Iogurte natural desnatado com morango, 1 colher de chia e 1 colher de linhaça.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Morango</td><td>1 xícara</td><td>32 kcal</td><td>1 g</td><td>8 g</td><td>0.3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                                <tr><td>Linhaça</td><td>1 colher</td><td>55 kcal</td><td>2 g</td><td>4 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Terça-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Pão integral com queijo cottage light, tomate e pepino, acompanhado de 1 kiwi.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>2 fatias</td><td>120 kcal</td><td>6 g</td><td>26 g</td><td>2 g</td></tr>
+                                <tr><td>Queijo cottage light</td><td>3 colheres</td><td>60 kcal</td><td>8 g</td><td>3 g</td><td>1 g</td></tr>
+                                <tr><td>Tomate e pepino</td><td>1 prato</td><td>35 kcal</td><td>2 g</td><td>7 g</td><td>0.2 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>55 kcal</td><td>1 g</td><td>13 g</td><td>0.3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Vitamina verde com banana, espinafre, leite desnatado e 1 colher de linhaça.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1/2 unidade</td><td>50 kcal</td><td>0.5 g</td><td>13 g</td><td>0.2 g</td></tr>
+                                <tr><td>Espinafre</td><td>1 xícara</td><td>7 kcal</td><td>0.9 g</td><td>1 g</td><td>0.1 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>100 ml</td><td>50 kcal</td><td>4 g</td><td>5 g</td><td>0.2 g</td></tr>
+                                <tr><td>Linhaça</td><td>1 colher</td><td>55 kcal</td><td>2 g</td><td>4 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Salada de morango, banana e kiwi com iogurte natural, 1 colher de chia e 1 colher de castanhas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Morango, banana e kiwi</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                                <tr><td>Castanhas</td><td>1 colher</td><td>45 kcal</td><td>1 g</td><td>2 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quarta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Bowls de aveia com maçã ralada, canela e 1 colher de chia, servido com leite desnatado.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aveia</td><td>40 g</td><td>150 kcal</td><td>5 g</td><td>27 g</td><td>3 g</td></tr>
+                                <tr><td>Maçã</td><td>1 unidade</td><td>95 kcal</td><td>0.5 g</td><td>25 g</td><td>0.3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>2 ovos cozidos acompanhados de tomate, pepino e 1 fatia de pão integral.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Ovos</td><td>2 unidades</td><td>156 kcal</td><td>12 g</td><td>1 g</td><td>10 g</td></tr>
+                                <tr><td>Tomate e pepino</td><td>1 prato</td><td>35 kcal</td><td>2 g</td><td>7 g</td><td>0.2 g</td></tr>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>70 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Smoothie de morango, banana e leite desnatado, finalizado com sementes de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Morango</td><td>1 xícara</td><td>32 kcal</td><td>1 g</td><td>8 g</td><td>0.3 g</td></tr>
+                                <tr><td>Banana</td><td>1/2 unidade</td><td>50 kcal</td><td>0.5 g</td><td>13 g</td><td>0.2 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>100 ml</td><td>50 kcal</td><td>4 g</td><td>5 g</td><td>0.2 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quinta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Omelete de claras com tomate, espinafre e 1 fatia de melão.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Claras</td><td>3 unidades</td><td>51 kcal</td><td>11 g</td><td>0.5 g</td><td>0 g</td></tr>
+                                <tr><td>Tomate</td><td>1 unidade</td><td>22 kcal</td><td>1 g</td><td>5 g</td><td>0.2 g</td></tr>
+                                <tr><td>Espinafre</td><td>1 xícara</td><td>7 kcal</td><td>0.9 g</td><td>1 g</td><td>0.1 g</td></tr>
+                                <tr><td>Melão</td><td>1 fatia</td><td>55 kcal</td><td>1 g</td><td>14 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Pão integral com ricota light, melão e uma xícara de chá verde.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>70 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                                <tr><td>Ricota light</td><td>2 colheres</td><td>60 kcal</td><td>6 g</td><td>2 g</td><td>3 g</td></tr>
+                                <tr><td>Melão</td><td>1 fatia</td><td>50 kcal</td><td>1 g</td><td>13 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Prato de morango, banana e kiwi com iogurte natural e 1 colher de castanhas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Morango, banana e kiwi</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Castanhas</td><td>1 colher</td><td>45 kcal</td><td>1 g</td><td>2 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sexta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Smoothie de banana com whey, aveia e gotas de canela.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1/2 unidade</td><td>50 kcal</td><td>0.5 g</td><td>13 g</td><td>0.2 g</td></tr>
+                                <tr><td>Whey</td><td>1 scoop</td><td>120 kcal</td><td>24 g</td><td>3 g</td><td>1 g</td></tr>
+                                <tr><td>Aveia</td><td>1 colher</td><td>30 kcal</td><td>1 g</td><td>5 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Pão integral com abacate, 1 ovo cozido e uma fatia de tomate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>70 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                                <tr><td>Abacate</td><td>1/2 unidade</td><td>120 kcal</td><td>1.5 g</td><td>6 g</td><td>11 g</td></tr>
+                                <tr><td>Ovo</td><td>1 unidade</td><td>78 kcal</td><td>6 g</td><td>0.6 g</td><td>5 g</td></tr>
+                                <tr><td>Tomate</td><td>1 fatia</td><td>10 kcal</td><td>0.5 g</td><td>2 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Bowls de morango e banana com iogurte natural, granola light e uma colher de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Morango e banana</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Granola light</td><td>1 colher</td><td>40 kcal</td><td>1 g</td><td>6 g</td><td>1.5 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sábado</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Panqueca integral recheada com morango e banana e 1 colher de iogurte natural.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Panqueca integral</td><td>1 unidade</td><td>120 kcal</td><td>4 g</td><td>20 g</td><td>2.5 g</td></tr>
+                                <tr><td>Morango e banana</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Iogurte natural</td><td>1 colher</td><td>30 kcal</td><td>3 g</td><td>4 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Vitamina de mamão com leite desnatado e 1 torrada integral com queijo branco.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Mamão</td><td>1 fatia</td><td>70 kcal</td><td>1 g</td><td>18 g</td><td>0.2 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                                <tr><td>Torrada integral</td><td>1 fatia</td><td>40 kcal</td><td>2 g</td><td>8 g</td><td>0.5 g</td></tr>
+                                <tr><td>Queijo branco</td><td>2 colheres</td><td>60 kcal</td><td>6 g</td><td>2 g</td><td>3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Bowls de aveia com berries, 1 colher de amêndoas e uma colher de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aveia</td><td>40 g</td><td>150 kcal</td><td>5 g</td><td>27 g</td><td>3 g</td></tr>
+                                <tr><td>Berries</td><td>1 xícara</td><td>70 kcal</td><td>1 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Amêndoas</td><td>1 colher</td><td>50 kcal</td><td>2 g</td><td>2 g</td><td>4 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Domingo</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Tapioca com banana, canela e 1 colher de linhaça, acompanhada de leite desnatado.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tapioca</td><td>1 porção</td><td>120 kcal</td><td>1 g</td><td>28 g</td><td>0.2 g</td></tr>
+                                <tr><td>Banana</td><td>1 unidade</td><td>105 kcal</td><td>1 g</td><td>27 g</td><td>0.4 g</td></tr>
+                                <tr><td>Linhaça</td><td>1 colher</td><td>55 kcal</td><td>2 g</td><td>4 g</td><td>4 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Pão integral com queijo branco light, tomate e 1 kiwi.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>60 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                                <tr><td>Queijo branco light</td><td>2 colheres</td><td>50 kcal</td><td>6 g</td><td>2 g</td><td>3 g</td></tr>
+                                <tr><td>Tomate</td><td>1 unidade</td><td>22 kcal</td><td>1 g</td><td>5 g</td><td>0.2 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>55 kcal</td><td>1 g</td><td>13 g</td><td>0.3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Mingau de aveia com maçã ralada, canela e 1 colher de linhaça.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aveia</td><td>40 g</td><td>150 kcal</td><td>5 g</td><td>27 g</td><td>3 g</td></tr>
+                                <tr><td>Maçã</td><td>1 unidade</td><td>95 kcal</td><td>0.5 g</td><td>25 g</td><td>0.3 g</td></tr>
+                                <tr><td>Canela</td><td>1 colher</td><td>6 kcal</td><td>0.1 g</td><td>2 g</td><td>0 g</td></tr>
+                                <tr><td>Linhaça</td><td>1 colher</td><td>55 kcal</td><td>2 g</td><td>4 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="lunch" class="menu-content">
+                        <h2>Segunda-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Prato de arroz integral com feijão, peito de frango grelhado, tomate, pepino e folhas verdes.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz integral</td><td>120 g</td><td>180 kcal</td><td>4 g</td><td>38 g</td><td>1.5 g</td></tr>
+                                <tr><td>Feijão</td><td>1 concha</td><td>120 kcal</td><td>8 g</td><td>20 g</td><td>0.5 g</td></tr>
+                                <tr><td>Frango grelhado</td><td>120 g</td><td>150 kcal</td><td>24 g</td><td>0 g</td><td>4 g</td></tr>
+                                <tr><td>Folhas verdes e tomate</td><td>1 prato</td><td>35 kcal</td><td>2 g</td><td>7 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Salada volumosa de quinoa com atum, tomate, pepino, cenoura ralada e hortelã.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Quinoa</td><td>1 prato</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Atum</td><td>1 lata</td><td>150 kcal</td><td>25 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Tomate, pepino e cenoura</td><td>1 prato</td><td>50 kcal</td><td>2 g</td><td>10 g</td><td>0.3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Wrap light de frango com alface, cenoura ralada, tomate e molho de iogurte natural.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Wrap integral</td><td>1 unidade</td><td>180 kcal</td><td>7 g</td><td>30 g</td><td>4 g</td></tr>
+                                <tr><td>Frango</td><td>120 g</td><td>150 kcal</td><td>24 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Alface, cenoura e tomate</td><td>1 prato</td><td>40 kcal</td><td>2 g</td><td>8 g</td><td>0.2 g</td></tr>
+                                <tr><td>Molho de iogurte</td><td>1 colher</td><td>20 kcal</td><td>1 g</td><td>2 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Terça-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Macarrão integral com molho de tomate caseiro, carne moída magra, abobrinha e rúcula.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Macarrão integral</td><td>1 prato</td><td>220 kcal</td><td>10 g</td><td>42 g</td><td>3 g</td></tr>
+                                <tr><td>Carne moída magra</td><td>120 g</td><td>160 kcal</td><td>22 g</td><td>0 g</td><td>7 g</td></tr>
+                                <tr><td>Abobrinha e rúcula</td><td>1 prato</td><td>30 kcal</td><td>2 g</td><td>6 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Tigela de lentilha com legumes assados, tofu grelhado e sementes de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Lentilha</td><td>1 prato</td><td>200 kcal</td><td>14 g</td><td>35 g</td><td>1 g</td></tr>
+                                <tr><td>Tofu</td><td>100 g</td><td>140 kcal</td><td>15 g</td><td>4 g</td><td>8 g</td></tr>
+                                <tr><td>Legumes assados</td><td>1 prato</td><td>60 kcal</td><td>3 g</td><td>12 g</td><td>0.5 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Sanduíche natural de peito de peru, abacate, alface e tomate, servido com água de coco.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>2 fatias</td><td>140 kcal</td><td>6 g</td><td>28 g</td><td>2 g</td></tr>
+                                <tr><td>Peito de peru</td><td>80 g</td><td>90 kcal</td><td>15 g</td><td>1 g</td><td>2 g</td></tr>
+                                <tr><td>Abacate</td><td>1/2 unidade</td><td>120 kcal</td><td>1.5 g</td><td>6 g</td><td>11 g</td></tr>
+                                <tr><td>Alface e tomate</td><td>1 prato</td><td>20 kcal</td><td>1 g</td><td>4 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quarta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Peixe assado com batata doce, brócolis e uma colher de ervas frescas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Peixe</td><td>120 g</td><td>180 kcal</td><td>24 g</td><td>0 g</td><td>8 g</td></tr>
+                                <tr><td>Batata doce</td><td>1 porção</td><td>150 kcal</td><td>2 g</td><td>35 g</td><td>0.3 g</td></tr>
+                                <tr><td>Brócolis</td><td>1 prato</td><td>50 kcal</td><td>4 g</td><td>10 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Prato de arroz, feijão preto, cenoura ralada, alface e 1 ovo cozido.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>120 g</td><td>170 kcal</td><td>3.5 g</td><td>35 g</td><td>0.8 g</td></tr>
+                                <tr><td>Feijão preto</td><td>1 concha</td><td>130 kcal</td><td>9 g</td><td>24 g</td><td>0.5 g</td></tr>
+                                <tr><td>Cenoura e alface</td><td>1 prato</td><td>35 kcal</td><td>1 g</td><td>8 g</td><td>0.2 g</td></tr>
+                                <tr><td>Ovo cozido</td><td>1 unidade</td><td>78 kcal</td><td>6 g</td><td>0.6 g</td><td>5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Salada de grão-de-bico com legumes, pepino, tomate e queijo cottage light.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Grão-de-bico</td><td>1 prato</td><td>220 kcal</td><td>10 g</td><td>38 g</td><td>4 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>60 kcal</td><td>3 g</td><td>12 g</td><td>0.5 g</td></tr>
+                                <tr><td>Queijo cottage</td><td>2 colheres</td><td>50 kcal</td><td>6 g</td><td>3 g</td><td>1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quinta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Prato de arroz com legumes variados, peito de frango grelhado e ervas frescas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>120 g</td><td>170 kcal</td><td>3.5 g</td><td>35 g</td><td>0.8 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                                <tr><td>Frango</td><td>120 g</td><td>150 kcal</td><td>24 g</td><td>0 g</td><td>5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Sopa de legumes rica em verduras com carne magra e pão integral.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sopa de legumes</td><td>1 prato</td><td>180 kcal</td><td>12 g</td><td>22 g</td><td>4 g</td></tr>
+                                <tr><td>Carne magra</td><td>100 g</td><td>160 kcal</td><td>24 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>70 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Salada completa com tofu grelhado, quinoa, tomate, pepino e abacate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tofu</td><td>100 g</td><td>140 kcal</td><td>15 g</td><td>4 g</td><td>8 g</td></tr>
+                                <tr><td>Quinoa</td><td>1 porção</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Tomate, pepino e abacate</td><td>1 prato</td><td>80 kcal</td><td>3 g</td><td>10 g</td><td>6 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sexta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Prato de arroz, feijão, salmão assado e salada de cenoura com salsinha.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>1 prato</td><td>200 kcal</td><td>4 g</td><td>45 g</td><td>1 g</td></tr>
+                                <tr><td>Feijão</td><td>1 concha</td><td>120 kcal</td><td>8 g</td><td>20 g</td><td>0.5 g</td></tr>
+                                <tr><td>Salmão</td><td>100 g</td><td>190 kcal</td><td>22 g</td><td>0 g</td><td>11 g</td></tr>
+                                <tr><td>Cenoura e salsinha</td><td>1 prato</td><td>30 kcal</td><td>1 g</td><td>7 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Bowls de arroz integral com legumes variados, ovo cozido e ervas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz integral</td><td>1 prato</td><td>220 kcal</td><td>5 g</td><td>45 g</td><td>2 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                                <tr><td>Ovo</td><td>1 unidade</td><td>78 kcal</td><td>6 g</td><td>0.6 g</td><td>5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Sanduíche de frango com pão integral, alface, tomate e 1 fatia de melão.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>2 fatias</td><td>120 kcal</td><td>6 g</td><td>28 g</td><td>2 g</td></tr>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Alface, tomate e melão</td><td>1 prato</td><td>50 kcal</td><td>2 g</td><td>10 g</td><td>0.3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sábado</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Prato de arroz, legumes variados e peixe grelhado com ervas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>1 prato</td><td>200 kcal</td><td>4 g</td><td>44 g</td><td>1 g</td></tr>
+                                <tr><td>Peixe</td><td>100 g</td><td>150 kcal</td><td>22 g</td><td>0 g</td><td>7 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Bowls de lentilha com cenoura, tomate, cebola e azeite light.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Lentilha</td><td>1 prato</td><td>200 kcal</td><td>14 g</td><td>35 g</td><td>1 g</td></tr>
+                                <tr><td>Cenoura e tomate</td><td>1 prato</td><td>50 kcal</td><td>1 g</td><td>10 g</td><td>0.2 g</td></tr>
+                                <tr><td>Azeite light</td><td>1 colher</td><td>45 kcal</td><td>0 g</td><td>0 g</td><td>5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Wrap de atum com alface, tomate, pepino e um toque de iogurte natural.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Wrap integral</td><td>1 unidade</td><td>180 kcal</td><td>7 g</td><td>30 g</td><td>4 g</td></tr>
+                                <tr><td>Atum</td><td>1 lata</td><td>150 kcal</td><td>25 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Alface, tomate e pepino</td><td>1 prato</td><td>30 kcal</td><td>1 g</td><td>6 g</td><td>0.2 g</td></tr>
+                                <tr><td>Iogurte natural</td><td>1 colher</td><td>20 kcal</td><td>1 g</td><td>2 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Domingo</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Prato de arroz, feijão, carne magra e salada de folhas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>120 g</td><td>170 kcal</td><td>3.5 g</td><td>35 g</td><td>0.8 g</td></tr>
+                                <tr><td>Feijão</td><td>1 concha</td><td>120 kcal</td><td>8 g</td><td>20 g</td><td>0.5 g</td></tr>
+                                <tr><td>Carne magra</td><td>120 g</td><td>150 kcal</td><td>24 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Folhas verdes</td><td>1 prato</td><td>20 kcal</td><td>1 g</td><td>4 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Prato de massa integral com legumes salteados e queijo cottage light.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Massa integral</td><td>1 prato</td><td>220 kcal</td><td>8 g</td><td>40 g</td><td>3 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                                <tr><td>Queijo cottage</td><td>2 colheres</td><td>50 kcal</td><td>6 g</td><td>3 g</td><td>1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Salada completa com frango, quinoa, tomate, pepino e abacate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Quinoa</td><td>1 porção</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Tomate, pepino e abacate</td><td>1 prato</td><td>80 kcal</td><td>3 g</td><td>10 g</td><td>6 g</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="snack" class="menu-content">
+                        <h2>Segunda-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Banana com 1 colher de pasta de amendoim e um copo de leite desnatado.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1 unidade</td><td>105 kcal</td><td>1 g</td><td>27 g</td><td>0.4 g</td></tr>
+                                <tr><td>Pasta de amendoim</td><td>1 colher</td><td>94 kcal</td><td>4 g</td><td>3 g</td><td>8 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Torradas integrais com ricota light, tomate e 1 kiwi.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Torradas integrais</td><td>2 fatias</td><td>80 kcal</td><td>4 g</td><td>16 g</td><td>1 g</td></tr>
+                                <tr><td>Ricota light</td><td>2 colheres</td><td>60 kcal</td><td>6 g</td><td>2 g</td><td>3 g</td></tr>
+                                <tr><td>Tomate e kiwi</td><td>1 prato</td><td>40 kcal</td><td>2 g</td><td>8 g</td><td>0.3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Iogurte natural com chia, morango e uma colher de linhaça.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                                <tr><td>Morango e linhaça</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>12 g</td><td>0.4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Terça-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Maçã com 1 colher de castanhas e um copo de iogurte natural.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Maçã</td><td>1 unidade</td><td>95 kcal</td><td>0.5 g</td><td>25 g</td><td>0.3 g</td></tr>
+                                <tr><td>Castanhas</td><td>1 colher</td><td>45 kcal</td><td>1 g</td><td>2 g</td><td>4 g</td></tr>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Pote de iogurte natural com granola light e kiwi.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Granola light</td><td>1 colher</td><td>40 kcal</td><td>1 g</td><td>6 g</td><td>1.5 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>42 kcal</td><td>1 g</td><td>10 g</td><td>0.4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Barra de cereal integral com uma xícara de chá e 1 kiwi pequeno.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Barra de cereal</td><td>1 unidade</td><td>120 kcal</td><td>3 g</td><td>22 g</td><td>4 g</td></tr>
+                                <tr><td>Chá</td><td>1 xícara</td><td>2 kcal</td><td>0 g</td><td>0.5 g</td><td>0 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>40 kcal</td><td>1 g</td><td>10 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quarta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Banana com aveia e uma colher de mel, servido com um copo de chá.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1 unidade</td><td>105 kcal</td><td>1 g</td><td>27 g</td><td>0.4 g</td></tr>
+                                <tr><td>Aveia</td><td>1 colher</td><td>30 kcal</td><td>1 g</td><td>5 g</td><td>0.5 g</td></tr>
+                                <tr><td>Mel</td><td>1 colher</td><td>20 kcal</td><td>0 g</td><td>5 g</td><td>0 g</td></tr>
+                                <tr><td>Chá</td><td>1 xícara</td><td>2 kcal</td><td>0 g</td><td>0.5 g</td><td>0 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Pão integral com queijo cottage light e kiwi.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>70 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                                <tr><td>Queijo cottage light</td><td>2 colheres</td><td>50 kcal</td><td>6 g</td><td>3 g</td><td>1 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>42 kcal</td><td>1 g</td><td>10 g</td><td>0.4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Shake de banana com leite desnatado e 1 colher de linhaça.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1 unidade</td><td>105 kcal</td><td>1 g</td><td>27 g</td><td>0.4 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                                <tr><td>Linhaça</td><td>1 colher</td><td>55 kcal</td><td>2 g</td><td>4 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quinta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Iogurte natural com morango, chia e uma colher de castanhas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Morango</td><td>1 xícara</td><td>32 kcal</td><td>1 g</td><td>8 g</td><td>0.3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                                <tr><td>Castanhas</td><td>1 colher</td><td>45 kcal</td><td>1 g</td><td>2 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Salada de morango, banana e kiwi com 1 colher de castanhas e uma xícara de chá.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Morango, banana e kiwi</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Castanhas</td><td>1 colher</td><td>45 kcal</td><td>1 g</td><td>2 g</td><td>4 g</td></tr>
+                                <tr><td>Chá</td><td>1 xícara</td><td>2 kcal</td><td>0 g</td><td>0.5 g</td><td>0 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Pão integral com abacate e uma fatia de tomate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>70 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                                <tr><td>Abacate</td><td>1/2 unidade</td><td>120 kcal</td><td>1.5 g</td><td>6 g</td><td>11 g</td></tr>
+                                <tr><td>Tomate</td><td>1 fatia</td><td>10 kcal</td><td>0.5 g</td><td>2 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sexta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Banana com aveia e um copo de leite desnatado.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1 unidade</td><td>105 kcal</td><td>1 g</td><td>27 g</td><td>0.4 g</td></tr>
+                                <tr><td>Aveia</td><td>1 colher</td><td>30 kcal</td><td>1 g</td><td>5 g</td><td>0.5 g</td></tr>
+                                <tr><td>Leite desnatado</td><td>200 ml</td><td>100 kcal</td><td>8 g</td><td>10 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Torrada integral com queijo branco light e 1 maçã.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Torrada integral</td><td>1 fatia</td><td>40 kcal</td><td>2 g</td><td>8 g</td><td>0.5 g</td></tr>
+                                <tr><td>Queijo branco light</td><td>2 colheres</td><td>60 kcal</td><td>6 g</td><td>2 g</td><td>3 g</td></tr>
+                                <tr><td>Maçã</td><td>1 unidade</td><td>95 kcal</td><td>0.5 g</td><td>25 g</td><td>0.3 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Mix de morango, banana e kiwi com iogurte natural e 1 colher de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Mix de morango, banana e kiwi</td><td>1 prato</td><td>70 kcal</td><td>2 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sábado</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Bowls de aveia com berries e uma colher de amêndoas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Aveia</td><td>40 g</td><td>150 kcal</td><td>5 g</td><td>27 g</td><td>3 g</td></tr>
+                                <tr><td>Berries</td><td>1 xícara</td><td>70 kcal</td><td>1 g</td><td>18 g</td><td>0.3 g</td></tr>
+                                <tr><td>Amêndoas</td><td>1 colher</td><td>50 kcal</td><td>2 g</td><td>2 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Banana com 1 colher de amêndoas e uma xícara de chá.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1/2 unidade</td><td>50 kcal</td><td>0.5 g</td><td>13 g</td><td>0.2 g</td></tr>
+                                <tr><td>Amêndoas</td><td>1 colher</td><td>50 kcal</td><td>2 g</td><td>2 g</td><td>4 g</td></tr>
+                                <tr><td>Chá</td><td>1 xícara</td><td>2 kcal</td><td>0 g</td><td>0.5 g</td><td>0 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Pão integral com pasta de amendoim e 1 kiwi pequeno.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Pão integral</td><td>1 fatia</td><td>60 kcal</td><td>3 g</td><td>13 g</td><td>1 g</td></tr>
+                                <tr><td>Pasta de amendoim</td><td>1 colher</td><td>85 kcal</td><td>4 g</td><td>3 g</td><td>8 g</td></tr>
+                                <tr><td>Kiwi</td><td>1 unidade</td><td>40 kcal</td><td>1 g</td><td>10 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Domingo</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Iogurte natural com mel, granola light e uma colher de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Mel</td><td>1 colher</td><td>20 kcal</td><td>0 g</td><td>5 g</td><td>0 g</td></tr>
+                                <tr><td>Granola light</td><td>1 colher</td><td>40 kcal</td><td>1 g</td><td>6 g</td><td>1.5 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Maçã com queijo branco light e uma colher de linhaça.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Maçã</td><td>1 unidade</td><td>95 kcal</td><td>0.5 g</td><td>25 g</td><td>0.3 g</td></tr>
+                                <tr><td>Queijo branco light</td><td>2 colheres</td><td>60 kcal</td><td>6 g</td><td>2 g</td><td>3 g</td></tr>
+                                <tr><td>Linhaça</td><td>1 colher</td><td>55 kcal</td><td>2 g</td><td>4 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Smoothie de banana com iogurte natural e uma colher de chia.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Banana</td><td>1 unidade</td><td>105 kcal</td><td>1 g</td><td>27 g</td><td>0.4 g</td></tr>
+                                <tr><td>Iogurte natural</td><td>170 g</td><td>100 kcal</td><td>6 g</td><td>12 g</td><td>3 g</td></tr>
+                                <tr><td>Chia</td><td>1 colher</td><td>60 kcal</td><td>2 g</td><td>5 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="dinner" class="menu-content">
+                        <h2>Segunda-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Peixe assado com legumes salteados, arroz integral e ervas frescas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Peixe</td><td>120 g</td><td>180 kcal</td><td>24 g</td><td>0 g</td><td>8 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                                <tr><td>Arroz integral</td><td>120 g</td><td>180 kcal</td><td>4 g</td><td>38 g</td><td>1.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Frango grelhado com batata-doce, salada de folhas e tomate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Batata-doce</td><td>1 porção</td><td>150 kcal</td><td>2 g</td><td>35 g</td><td>0.3 g</td></tr>
+                                <tr><td>Salada</td><td>1 prato</td><td>35 kcal</td><td>2 g</td><td>5 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Tigela de tofu grelhado com quinoa, legumes e ervas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tofu</td><td>100 g</td><td>140 kcal</td><td>15 g</td><td>4 g</td><td>8 g</td></tr>
+                                <tr><td>Quinoa</td><td>1 porção</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Terça-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Carne magra com arroz, legumes salteados e ervas frescas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Carne magra</td><td>120 g</td><td>150 kcal</td><td>24 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Arroz</td><td>120 g</td><td>170 kcal</td><td>3.5 g</td><td>35 g</td><td>0.8 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Salada de atum com tomate, pepino, abacate e folhas verdes.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Atum</td><td>1 lata</td><td>150 kcal</td><td>25 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Tomate e pepino</td><td>1 prato</td><td>35 kcal</td><td>1 g</td><td>7 g</td><td>0.2 g</td></tr>
+                                <tr><td>Abacate</td><td>1/2 unidade</td><td>120 kcal</td><td>1.5 g</td><td>6 g</td><td>11 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Omelete de claras com legumes e uma colher de queijo cottage.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Claras</td><td>3 unidades</td><td>51 kcal</td><td>11 g</td><td>0.5 g</td><td>0 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                                <tr><td>Queijo cottage</td><td>1 colher</td><td>25 kcal</td><td>3 g</td><td>1 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quarta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Frango grelhado com purê de abóbora, salada de folhas e tomate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Purê de abóbora</td><td>1 porção</td><td>120 kcal</td><td>2 g</td><td>28 g</td><td>0.3 g</td></tr>
+                                <tr><td>Salada</td><td>1 prato</td><td>35 kcal</td><td>2 g</td><td>5 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Lentilha com arroz integral, cenoura e alface.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Lentilha</td><td>1 prato</td><td>200 kcal</td><td>14 g</td><td>35 g</td><td>1 g</td></tr>
+                                <tr><td>Arroz integral</td><td>1 prato</td><td>220 kcal</td><td>5 g</td><td>45 g</td><td>2 g</td></tr>
+                                <tr><td>Cenoura e alface</td><td>1 prato</td><td>30 kcal</td><td>1 g</td><td>7 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Salmão assado com legumes assados e ervas aromáticas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Salmão</td><td>100 g</td><td>190 kcal</td><td>22 g</td><td>0 g</td><td>11 g</td></tr>
+                                <tr><td>Legumes assados</td><td>1 prato</td><td>80 kcal</td><td>3 g</td><td>14 g</td><td>1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Quinta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Peito de frango grelhado com arroz, brócolis e ervas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>120 g</td><td>150 kcal</td><td>24 g</td><td>0 g</td><td>5 g</td></tr>
+                                <tr><td>Arroz</td><td>120 g</td><td>170 kcal</td><td>3.5 g</td><td>35 g</td><td>0.8 g</td></tr>
+                                <tr><td>Brócolis</td><td>1 prato</td><td>50 kcal</td><td>4 g</td><td>10 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Sopa de legumes com carne magra e um pouco de arroz integral.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sopa de legumes</td><td>1 prato</td><td>180 kcal</td><td>12 g</td><td>22 g</td><td>4 g</td></tr>
+                                <tr><td>Carne magra</td><td>100 g</td><td>160 kcal</td><td>24 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Arroz integral</td><td>1 colher</td><td>25 kcal</td><td>0.5 g</td><td>5 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Salada quente de tofu, quinoa, tomate e pepino.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Tofu</td><td>100 g</td><td>140 kcal</td><td>15 g</td><td>4 g</td><td>8 g</td></tr>
+                                <tr><td>Quinoa</td><td>1 porção</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Tomate e pepino</td><td>1 prato</td><td>35 kcal</td><td>1 g</td><td>7 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sexta-Feira</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Peixe com arroz integral, legumes e ervas frescas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Peixe</td><td>100 g</td><td>150 kcal</td><td>22 g</td><td>0 g</td><td>7 g</td></tr>
+                                <tr><td>Arroz integral</td><td>1 prato</td><td>220 kcal</td><td>5 g</td><td>45 g</td><td>2 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Omelete de ovos com salada de folhas, tomate e pepino.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Ovos</td><td>2 unidades</td><td>156 kcal</td><td>12 g</td><td>1 g</td><td>10 g</td></tr>
+                                <tr><td>Salada</td><td>1 prato</td><td>35 kcal</td><td>2 g</td><td>5 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Frango com quinoa, tomate e um pouco de abacate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Quinoa</td><td>1 porção</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Tomate e abacate</td><td>1 prato</td><td>60 kcal</td><td>2 g</td><td>8 g</td><td>4 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Sábado</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Arroz, feijão, peixe grelhado e salada de alface.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz</td><td>1 prato</td><td>200 kcal</td><td>4 g</td><td>44 g</td><td>1 g</td></tr>
+                                <tr><td>Feijão</td><td>1 concha</td><td>120 kcal</td><td>8 g</td><td>20 g</td><td>0.5 g</td></tr>
+                                <tr><td>Peixe</td><td>100 g</td><td>150 kcal</td><td>22 g</td><td>0 g</td><td>7 g</td></tr>
+                                <tr><td>Alface</td><td>1 prato</td><td>10 kcal</td><td>1 g</td><td>2 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Lentilha com legumes e queijo cottage light.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Lentilha</td><td>1 prato</td><td>200 kcal</td><td>14 g</td><td>35 g</td><td>1 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                                <tr><td>Queijo cottage</td><td>2 colheres</td><td>50 kcal</td><td>6 g</td><td>3 g</td><td>1 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Frango grelhado com batata cozida e salada de tomate.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Batata</td><td>1 porção</td><td>130 kcal</td><td>3 g</td><td>30 g</td><td>0.2 g</td></tr>
+                                <tr><td>Tomate e salada</td><td>1 prato</td><td>30 kcal</td><td>2 g</td><td>5 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h2>Domingo</h2>
+                        <h3>Opção 1</h3>
+                        <ul>
+                            <li>Peixe com quinoa, legumes e ervas aromáticas.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Peixe</td><td>100 g</td><td>150 kcal</td><td>22 g</td><td>0 g</td><td>7 g</td></tr>
+                                <tr><td>Quinoa</td><td>1 porção</td><td>180 kcal</td><td>6 g</td><td>32 g</td><td>3 g</td></tr>
+                                <tr><td>Legumes</td><td>1 prato</td><td>70 kcal</td><td>3 g</td><td>15 g</td><td>0.5 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 2</h3>
+                        <ul>
+                            <li>Salada de frango com abacate, tomate e folhas verdes.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Frango</td><td>100 g</td><td>165 kcal</td><td>25 g</td><td>0 g</td><td>6 g</td></tr>
+                                <tr><td>Abacate</td><td>1/2 unidade</td><td>120 kcal</td><td>1.5 g</td><td>6 g</td><td>11 g</td></tr>
+                                <tr><td>Tomate e folhas verdes</td><td>1 prato</td><td>30 kcal</td><td>2 g</td><td>5 g</td><td>0.2 g</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Opção 3</h3>
+                        <ul>
+                            <li>Arroz integral com feijão, omelete de claras e salada.</li>
+                        </ul>
+                        <table class="nutrition-table">
+                            <thead>
+                                <tr><th>Item</th><th>Porção</th><th>Calorias</th><th>Proteínas</th><th>Carboidratos</th><th>Gorduras</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Arroz integral</td><td>1 prato</td><td>220 kcal</td><td>5 g</td><td>45 g</td><td>2 g</td></tr>
+                                <tr><td>Feijão</td><td>1 concha</td><td>120 kcal</td><td>8 g</td><td>20 g</td><td>0.5 g</td></tr>
+                                <tr><td>Omelete de claras</td><td>1 porção</td><td>140 kcal</td><td>12 g</td><td>2 g</td><td>9 g</td></tr>
+                                <tr><td>Salada</td><td>1 prato</td><td>20 kcal</td><td>1 g</td><td>4 g</td><td>0.1 g</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </main>
+
+                <script>
+                    function normalizeDay(value) {
+                        return value
+                            .toLowerCase()
+                            .normalize('NFD')
+                            .replace(/[\u0300-\u036f]/g, '');
+                    }
+
+                    function groupDayBlocks() {
+                        document.querySelectorAll('.menu-content').forEach(section => {
+                            const children = Array.from(section.children);
+                            section.innerHTML = '';
+
+                            let currentBlock = null;
+
+                            children.forEach(child => {
+                                if (child.tagName === 'H2') {
+                                    if (currentBlock) {
+                                        section.appendChild(currentBlock);
+                                    }
+
+                                    currentBlock = document.createElement('div');
+                                    currentBlock.className = 'day-block';
+                                    currentBlock.dataset.day = normalizeDay(child.textContent.trim());
+                                    currentBlock.appendChild(child);
+                                } else if (currentBlock) {
+                                    currentBlock.appendChild(child);
+                                }
+                            });
+
+                            if (currentBlock) {
+                                section.appendChild(currentBlock);
+                            }
+                        });
+                    }
+
+                    function splitMenuListItems() {
+                        document.querySelectorAll('.menu-content ul').forEach(ul => {
+                            const items = Array.from(ul.querySelectorAll('li'));
+
+                            items.forEach(li => {
+                                const text = li.textContent.trim();
+                                const parts = text
+                                    .split(/,\s*/)
+                                    .map(part => part.trim())
+                                    .filter(Boolean);
+
+                                if (parts.length > 1) {
+                                    const fragment = document.createDocumentFragment();
+                                    parts.forEach(part => {
+                                        const newLi = document.createElement('li');
+                                        newLi.textContent = part;
+                                        fragment.appendChild(newLi);
+                                    });
+                                    ul.replaceChild(fragment, li);
+                                }
+                            });
+                        });
+                    }
+
+                    function applyDayFilter() {
+                        const selectedDay = document.getElementById('dayFilter').value;
+
+                        document.querySelectorAll('.day-block').forEach(block => {
+                            const matches = selectedDay === 'all' || block.dataset.day === selectedDay;
+                            block.hidden = !matches;
+                        });
+                    }
+
+                    document.querySelectorAll('.menu-btn').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const menuId = this.getAttribute('data-menu');
+
+                            document.querySelectorAll('.menu-btn').forEach(btn => {
+                                btn.classList.remove('active');
+                            });
+
+                            document.querySelectorAll('.menu-content').forEach(content => {
+                                content.classList.remove('active');
+                            });
+
+                            this.classList.add('active');
+                            document.getElementById(menuId).classList.add('active');
+                        });
+                    });
+
+                    groupDayBlocks();
+                    splitMenuListItems();
+                    document.getElementById('dayFilter').addEventListener('change', applyDayFilter);
+                    applyDayFilter();
+                </script>
+
+                <footer class="footer">
+                    <div class="footer-content">
+                        <div class="footer-block">
+                            <h3>Vitalidade</h3>
+                            <p>Planejamos refeições equilibradas, práticas e inspiradas em um estilo de vida saudável.</p>
+                        </div>
+                        <div class="footer-block">
+                            <h3>Conteúdo</h3>
+                            <ul>
+                                <li>Cardápios semanais</li>
+                                <li>Opções proteicas</li>
+                                <li>Dicas nutricionais</li>
+                            </ul>
+                        </div>
+                        <div class="footer-block">
+                            <h3>Contato</h3>
+                            <p>contato@vitalidade.com<br>+55 (11) 99999-0000</p>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        © 2026 Vitalidade — Menu imaginário para fins de demonstração.
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html> 
